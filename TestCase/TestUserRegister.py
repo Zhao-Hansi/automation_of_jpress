@@ -1,6 +1,7 @@
 import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 
+import TestData.login_data
 from pages.user_register_page import UserRegisterPage
 from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
@@ -15,9 +16,10 @@ class TestUserRegister(object):
         self.registerPage = UserRegisterPage(self.driver)
         self.registerPage.goto_register_page()
 
-    @pytest.mark.parametrize('username,email,pwd,confirmPwd,captcha,expected', login_data)
-    def test1_register(self, username, email, pwd, confirm_pwd, captcha, expected):
+    login_data = TestData.login_data.login_data()
 
+    @pytest.mark.parametrize('username,email,pwd,confirm_pwd,captcha,expected', login_data)
+    def test1_register(self, username, email, pwd, confirm_pwd, captcha, expected):
         self.registerPage.input_username(username)
         self.registerPage.input_email(email)
 
