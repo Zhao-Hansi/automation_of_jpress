@@ -16,7 +16,7 @@ class UserRegisterPage(BasePage):
 
     def goto_register_page(self):
         self.driver.get("http://localhost:8080/jpress/user/register")
-        self.driver.maxmize_window()
+        self.driver.maximize_window()
 
     def input_username(self, username):
         self.clear(*self.username_input)

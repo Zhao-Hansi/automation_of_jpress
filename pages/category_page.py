@@ -24,7 +24,6 @@ class CategoryPage(BasePage):
 
     def click_article(self):
         self.click(*self.click_article_loc)
-        sleep(1)
 
     def click_category(self):
         self.click(*self.click_category_loc)

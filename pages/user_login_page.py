@@ -28,4 +28,3 @@ class UserLoginPage(BasePage):
 
     def click_login_btn(self):
         self.click(*self.login_btn)
-        sleep(2)

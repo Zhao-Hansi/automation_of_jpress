@@ -37,19 +37,15 @@ class ArticlePage(BasePage):
 
     def click_article(self):
         self.click(*self.click_article_loc)
-        sleep(1)
 
     def click_article_manage(self):
         self.click(*self.click_article_manage_loc)
-        sleep(1)
 
     def click_add_article(self):
         self.click(*self.click_add_article_btn_loc)
-        sleep(1)
 
     def input_article_title(self, title):
         self.type_text(title, *self.article_title_loc)
-        sleep(1)
 
     def input_body(self, body):
         frame1 = self.find_element(*self.iframe_loc)
@@ -63,16 +59,11 @@ class ArticlePage(BasePage):
     def del_single_article(self):
         link = self.find_element(*self.article_link_loc)
         ActionChains(self.login.driver).move_to_element(link).perform()
-
-        sleep(1)
-
         del_elem = self.find_element(*self.del_article_link_loc)
         del_elem.click()
 
     def del_all_article(self):
-        sleep(1)
         self.find_element(*self.click_article_manage_loc).click()
-        sleep(1)
 
         link = self.find_element(*self.select_all_checkbox_loc)
         link.click()
