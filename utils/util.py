@@ -7,18 +7,17 @@ from PIL import Image
 import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import logging
+import logging.handlers
+import datetime
 
 
 def get_logger():
-    import logging
-    import logging.handlers
-    import datetime
 
     logger = logging.getLogger('mylogger')
     logger.setLevel(logging.DEBUG)
 
-    rf_handler = logging.handlers.TimedRotatingFileHandler('all.log', when='midnight', interval=1, backupCount=7,
-                                                           atTime=datetime.time(0, 0, 0, 0))
+    rf_handler = logging.handlers.TimedRotatingFileHandler('all.log', when='midnight', interval=1, backupCount=7,atTime=datetime.time(0, 0, 0, 0))
     rf_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
 
     f_handler = logging.FileHandler('error.log')
