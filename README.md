@@ -23,3 +23,6 @@ test framework : selenium
 browser : chrome 
 
 selenium webdriver download address :https://www.selenium.dev/documentation/webdriver/
+
+## learning reference
+pytest: https://docs.pytest.org/en/7.1.x/getting-started.html

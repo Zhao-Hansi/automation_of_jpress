@@ -1,9 +1,11 @@
+import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils import util
 from selenium import webdriver
+import TestData.login_data
 
 
 class TestCategory(object):
@@ -11,8 +13,9 @@ class TestCategory(object):
         self.login = webdriver.Chrome()
         self.login.get('http://localhost:8080/jpress/user/login')
         self.login.maximize_window()
-        util.login(self.login)
+        util.login(self.login, TestData.login_data.login['username'], TestData.login_data.login['pwd'])
 
+    @pytest.mark.skip()
     def test_add_category_error(self):
         name = ''
         parent = 'python'

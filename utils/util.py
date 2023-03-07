@@ -30,14 +30,14 @@ def get_logger():
     return logger
 
 
-def get_code(driver, id):
+def get_code(driver, element_id):
     t = time.time()
     path = os.path.dirname(os.path.dirname(__file__)) + '\\screenshots'
     picture_name1 = path + '\\' + str(t) + '.png'
 
     driver.save_screenshot(picture_name1)
 
-    ce = driver.find_element_by_id(id)
+    ce = driver.find_element(By.ID, element_id)
 
     left = ce.location['x']
     top = ce.location['y']
@@ -80,9 +80,7 @@ def load_cookie(driver, path):
             driver.add_cookie(cookie)
 
 
-def login(driver):
-    username = 'zhaozexin'
-    pwd = '123456'
+def login(driver, username, pwd):
 
     driver.find_element(By.NAME, 'user').clear()
     driver.find_element(By.NAME, 'user').send_keys(username)
