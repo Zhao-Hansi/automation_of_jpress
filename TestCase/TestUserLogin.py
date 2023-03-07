@@ -26,7 +26,7 @@ class TestUserLogin(object):
         alert.accept()
 
     def test_user_login_ok(self):
-        username = 'admin'
+        username = 'zhaozexin'
         pwd = '123456'
         expected = '用户中心'
 

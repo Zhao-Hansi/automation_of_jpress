@@ -5,6 +5,8 @@ import time
 import ddddocr
 from PIL import Image
 import os
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 
 def get_logger():
@@ -76,3 +78,14 @@ def load_cookie(driver, path):
         cookies = pickle.load(cookiesfile)
         for cookie in cookies:
             driver.add_cookie(cookie)
+
+
+def login(driver):
+    username = 'zhaozexin'
+    pwd = '123456'
+
+    driver.find_element(By.NAME, 'user').clear()
+    driver.find_element(By.NAME, 'user').send_keys(username)
+    driver.find_element(By.NAME, 'pwd').clear()
+    driver.find_element(By.NAME, 'pwd').send_keys(pwd)
+    driver.find_element(By.CLASS_NAME, 'btn').click()
