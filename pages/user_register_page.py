@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
+from pages.user_login_page import UserLoginPage
 
 
 class UserRegisterPage(BasePage):
@@ -40,3 +41,4 @@ class UserRegisterPage(BasePage):
 
     def click_register_btn(self):
         self.click(*self.register_btn)
+        return UserLoginPage(self.driver)

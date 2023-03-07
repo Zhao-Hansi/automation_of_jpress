@@ -1,4 +1,3 @@
-from time import sleep
 
 from selenium.webdriver.common.by import By
 
@@ -10,9 +9,6 @@ class UserLoginPage(BasePage):
     username_input = (By.NAME, 'user')
     pwd_input = (By.NAME, 'pwd')
     login_btn = (By.CLASS_NAME, 'btn')
-
-    def __init__(self, driver):
-        BasePage.__init__(self, driver)
 
     def goto_login_page(self):
         self.driver.get('http://localhost:8080/jpress/user/login')
