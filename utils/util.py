@@ -32,7 +32,7 @@ def get_logger():
 
 def get_code(driver, element_id):
     t = time.time()
-    path = os.path.dirname(os.path.dirname(__file__)) + '\\screenshots'
+    path = os.path.dirname(os.path.dirname(__file__)) + '\\Artifacts/screenshot'
     picture_name1 = path + '\\' + str(t) + '.png'
 
     driver.save_screenshot(picture_name1)
