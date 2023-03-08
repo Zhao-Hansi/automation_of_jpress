@@ -1,8 +1,7 @@
 # automation_of_jpress
 
 ## backgroud
-This repo in order to set up an automation test project from 0 to 1, I will use an open-source project as a tested project. 
-if you interested in it, you can clone this project.
+This repo to set up an automation test project from 0 to 1, I will use an open source project as a tested project. If you are interested, you can clone this project.
 
 ## test system
 jpress --- http://www.jpress.cn/ 
